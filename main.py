@@ -5,8 +5,7 @@ def add_contact(name, number):
   numbers.append(number)
 
 
-def del_contact():
-   contact_to_del=input("Which contact do you want to delete (Enter name of contact : case sensitive): ")
+def del_contact(contact_to_del):
    index_no = -1
    
    for i in contact:
@@ -15,6 +14,7 @@ def del_contact():
       if i == contact_to_del:
          contact.pop(index_no)
          numbers.pop(index_no)
+         print("Done!!")
          break
          
       elif (index_no+1) > len(contact):
@@ -23,3 +23,15 @@ def del_contact():
          
       else:
          continue
+
+def search(mycontact):
+   
+   if mycontact in contact:
+      index_no0 = -1
+      for v in contact:
+         index_no0 += 1
+         if v==mycontact:
+            print(f"Contact name: {v}\nContact number: {numbers[index_no0]}")
+   else:
+      print("Contact not found")
+
