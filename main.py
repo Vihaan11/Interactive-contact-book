@@ -55,7 +55,7 @@ def edit(mycontact):
             name0=input("New Contact name: ")
             number0=input("New Contact number: ")
             try:
-               contact[index_no1]=name0
+               contact[index_no1]=name0.upper()
                numbers[index_no1]=number0
                print("Done!")
             except:
