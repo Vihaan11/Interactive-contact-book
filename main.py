@@ -57,6 +57,14 @@ def edit(mycontact):
    #    print("Done!")
    # except:
    #    print("Error!")
+
+
+   # if number in numbers:
+   #    print("\nSorry! The number for the contact is already used!")
+   # else:
+   #    contact.append(name)
+   #    numbers.append(number)
+   #    print("\nDone!")
    
    num_of_contact=0
    if mycontact in contact:
@@ -79,9 +87,12 @@ def edit(mycontact):
             name0=input("\nNew Contact name: ")
             number0=input("New Contact number: ")
             try:
-               contact[index_no01]=name0.upper()
-               numbers[index_no01]=number0
-               print("\nDone!")
+               if number0 in numbers:
+                  print("\nSorry! The number for the contact is already used!")
+               else:
+                  contact[index_no01]=name0.upper()
+                  numbers[index_no01]=number0
+                  print("\nDone!")
             except:
                print("\nError!")
    else:
@@ -93,9 +104,12 @@ def edit(mycontact):
                name0=input("\nNew Contact name: ")
                number0=input("New Contact number: ")
                try:
-                  contact[index_no01]=name0.upper()
-                  numbers[index_no01]=number0
-                  print("\nDone!")
+                  if number0 in numbers:
+                     print("\nSorry! The number for the contact is already used!")
+                  else:
+                     contact[index_no01]=name0.upper()
+                     numbers[index_no01]=number0
+                     print("\nDone!")
                except:
                   print("\nError!")
       
