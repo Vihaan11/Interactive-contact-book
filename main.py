@@ -8,9 +8,12 @@ print("""_________                __                 __    ___.                 
 contact=[]
 numbers=[]
 def add_contact(name, number):
-   contact.append(name)
-   numbers.append(number)
-   print("Done!")
+   if number in numbers:
+      print("\nSorry! The number for the contact is already used!")
+   else:
+      contact.append(name)
+      numbers.append(number)
+      print("\nDone!")
 
 
 def del_contact(contact_to_del):
@@ -22,11 +25,11 @@ def del_contact(contact_to_del):
       if i == contact_to_del:
          contact.pop(index_no)
          numbers.pop(index_no)
-         print("Done!!")
+         print("\nDone!!")
          break
          
       elif (index_no+1) > len(contact):
-         print("Contact not found")
+         print("\nContact not found")
          break
          
       else:
@@ -46,22 +49,56 @@ def search(mycontact):
 
 def edit(mycontact):
 
+   # name0=input("New Contact name: ")
+   # number0=input("New Contact number: ")
+   # try:
+   #    contact[index_no1]=name0.upper()
+   #    numbers[index_no1]=number0
+   #    print("Done!")
+   # except:
+   #    print("Error!")
+   
+   num_of_contact=0
    if mycontact in contact:
       index_no1 = -1
       for v in contact:
          index_no1 += 1
          if v==mycontact:
             print(f"\nContact name: {v}\nContact number: {numbers[index_no1]}")
-            name0=input("New Contact name: ")
+            num_of_contact += 1
+   else:
+      print("\nContact not found")
+   
+   if num_of_contact > 1:
+      to_edit = input("\nThere is more than 1 contact(s) here. Please enter the contact number of the one you want to edit: ")
+      
+      index_no01 = -1
+      for v in numbers:
+         index_no01 += 1
+         if v==to_edit:
+            name0=input("\nNew Contact name: ")
             number0=input("New Contact number: ")
             try:
-               contact[index_no1]=name0.upper()
-               numbers[index_no1]=number0
-               print("Done!")
+               contact[index_no01]=name0.upper()
+               numbers[index_no01]=number0
+               print("\nDone!")
             except:
-               print("Error!")
+               print("\nError!")
    else:
-      print("Contact not found")
+      if mycontact in contact:
+         index_no01 = -1
+         for v in contact:
+            index_no01 += 1
+            if v==mycontact:
+               name0=input("\nNew Contact name: ")
+               number0=input("New Contact number: ")
+               try:
+                  contact[index_no01]=name0.upper()
+                  numbers[index_no01]=number0
+                  print("\nDone!")
+               except:
+                  print("\nError!")
+      
 
 List_of_cmds="List of commands:\n\tadd : add a contact to contact book\n\tdel : delete an existing contact\n\tsearch : search for an existing contact\n\tedit : edit an existing contact\n\tview : view the contact book\n\tquit : quit the app\n\thelp : get this list of commands"
 print(List_of_cmds)
