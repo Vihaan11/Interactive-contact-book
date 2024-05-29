@@ -18,23 +18,24 @@ def add_contact(name, number):
 
 def del_contact(contact_to_del):
    index_no = -1
-   
-   for i in contact:
-      index_no += 1
-      
-      if i == contact_to_del:
-         contact.pop(index_no)
-         numbers.pop(index_no)
-         print("\nDone!!")
-         break
+   if contact_to_del in contact:   
+      for i in contact:
+         index_no += 1
          
-      elif (index_no+1) > len(contact):
-         print("\nContact not found")
-         break
-         
-      else:
-         continue
-
+         if i == contact_to_del:
+            contact.pop(index_no)
+            numbers.pop(index_no)
+            print("\nDone!!")
+            break
+            
+         elif (index_no+1) > len(contact):
+            print("\nContact not found")
+            break
+            
+         else:
+            continue
+   else:
+      print("\nContact not found")
 def search(mycontact):
    
    if mycontact in contact:
@@ -137,7 +138,7 @@ while True:
       name4=input("\nContact name: ")
       edit(name4.upper())
    elif cmd=="5":
-      print("\nView Contact Book")
+      print("\nView ontact Book")
       index_no2=-1
       for v in contact:
          index_no2 += 1
