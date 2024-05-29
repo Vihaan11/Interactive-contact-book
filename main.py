@@ -114,25 +114,25 @@ def edit(mycontact):
                   print("\nError!")
       
 
-List_of_cmds="List of commands:\n\tadd : add a contact to contact book\n\tdel : delete an existing contact\n\tsearch : search for an existing contact\n\tedit : edit an existing contact\n\tview : view the contact book\n\tquit : quit the app\n\thelp : get this list of commands"
+List_of_cmds="List of commands:\n\t1 : add a contact to contact book\n\t2 : delete an existing contact\n\t3 : search for an existing contact\n\t4 : edit an existing contact\n\t5 : view the contact book\n\tquit : quit the app\n\thelp : get this list of commands"
 print(List_of_cmds)
 
 while True:
    cmd=input("\n\n>>")
-   if cmd=="add":
+   if cmd=="1":
       name1=input("\nContact name: ")
       number1=input("Contact number: ")
       add_contact(name1.upper(),number1)
-   elif cmd=="del":
+   elif cmd=="2":
       name2=input("\nContact name: ")
       del_contact(name2.upper())
-   elif cmd=="search":
+   elif cmd=="3":
       name3=input("\nContact name: ")
       search(name3.upper())
-   elif cmd=="edit":
+   elif cmd=="4":
       name4=input("\nContact name: ")
       edit(name4.upper())
-   elif cmd=="view":
+   elif cmd=="5":
       index_no2=-1
       for v in contact:
          index_no2 += 1
