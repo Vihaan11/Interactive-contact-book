@@ -127,22 +127,34 @@ while True:
       add_contact(name1.upper(),number1)
    elif cmd=="2":
       print("\nDelete contact")
-      name2=input("\nContact name: ")
-      del_contact(name2.upper())
+      if len(contact)<=0:
+         print("The contact book is empty")
+      else:
+         name2=input("\nContact name: ")
+         del_contact(name2.upper())
    elif cmd=="3":
       print("\nSearch")
-      name3=input("\nContact name: ")
-      search(name3.upper())
+      if len(contact)<=0:
+         print("The contact book is empty")
+      else:
+         name3=input("\nContact name: ")
+         search(name3.upper())
    elif cmd=="4":
       print("\nEdit contact")
-      name4=input("\nContact name: ")
-      edit(name4.upper())
+      if len(contact)<=0:
+         print("The contact book is empty")
+      else:
+         name4=input("\nContact name: ")
+         edit(name4.upper())
    elif cmd=="5":
-      print("\nView ontact Book")
-      index_no2=-1
-      for v in contact:
-         index_no2 += 1
-         print(f"\nContact name: {v}\nContact number: {numbers[index_no2]}")
+      print("\nView Contact Book")
+      if len(contact)<=0:
+         print("The contact book is empty")
+      else:
+         index_no2=-1
+         for v in contact:
+            index_no2 += 1
+            print(f"\nContact name: {v}\nContact number: {numbers[index_no2]}")
    elif cmd=="quit":
       break
    elif cmd=="help":
