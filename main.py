@@ -120,19 +120,24 @@ print(List_of_cmds)
 while True:
    cmd=input("\n\n>>")
    if cmd=="1":
+      print("\nAdd contact")
       name1=input("\nContact name: ")
       number1=input("Contact number: ")
       add_contact(name1.upper(),number1)
    elif cmd=="2":
+      print("\nDelete contact")
       name2=input("\nContact name: ")
       del_contact(name2.upper())
    elif cmd=="3":
+      print("\nSearch")
       name3=input("\nContact name: ")
       search(name3.upper())
    elif cmd=="4":
+      print("\nEdit contact")
       name4=input("\nContact name: ")
       edit(name4.upper())
    elif cmd=="5":
+      print("\nView Contact Book")
       index_no2=-1
       for v in contact:
          index_no2 += 1
