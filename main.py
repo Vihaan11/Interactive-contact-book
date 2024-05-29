@@ -117,29 +117,77 @@ def edit(mycontact):
 List_of_cmds="List of commands:\n\tadd : add a contact to contact book\n\tdel : delete an existing contact\n\tsearch : search for an existing contact\n\tedit : edit an existing contact\n\tview : view the contact book\n\tquit : quit the app\n\thelp : get this list of commands"
 print(List_of_cmds)
 
+
+
+
 while True:
    cmd=input("\n\n>>")
    if cmd=="add":
+      print("\nAdd contact")
       name1=input("\nContact name: ")
       number1=input("Contact number: ")
       add_contact(name1.upper(),number1)
    elif cmd=="del":
-      name2=input("\nContact name: ")
-      del_contact(name2.upper())
+      print("\nDelete contact")
+      if len(contact)<=0:
+         print("\nThe contact book is empty")
+      else:
+         name2=input("\nContact name: ")
+         del_contact(name2.upper())
    elif cmd=="search":
-      name3=input("\nContact name: ")
-      search(name3.upper())
+      print("\nSearch")
+      if len(contact)<=0:
+         print("\nThe contact book is empty")
+      else:
+         name3=input("\nContact name: ")
+         search(name3.upper())
    elif cmd=="edit":
-      name4=input("\nContact name: ")
-      edit(name4.upper())
+      print("\nEdit contact")
+      if len(contact)<=0:
+         print("\nThe contact book is empty")
+      else:
+         name4=input("\nContact name: ")
+         edit(name4.upper())
    elif cmd=="view":
-      index_no2=-1
-      for v in contact:
-         index_no2 += 1
-         print(f"\nContact name: {v}\nContact number: {numbers[index_no2]}")
+      print("\nView Contact Book")
+      if len(contact)<=0:
+         print("\nThe contact book is empty")
+      else:
+         index_no2=-1
+         for v in contact:
+            index_no2 += 1
+            print(f"\nContact name: {v}\nContact number: {numbers[index_no2]}")
    elif cmd=="quit":
       break
    elif cmd=="help":
       print(List_of_cmds)
    else:
       print("\nCommand not found")
+
+      
+# while True:
+#    cmd=input("\n\n>>")
+#    if cmd=="add":
+#       name1=input("\nContact name: ")
+#       number1=input("Contact number: ")
+#       add_contact(name1.upper(),number1)
+#    elif cmd=="del":
+#       name2=input("\nContact name: ")
+#       del_contact(name2.upper())
+#    elif cmd=="search":
+#       name3=input("\nContact name: ")
+#       search(name3.upper())
+#    elif cmd=="edit":
+#       name4=input("\nContact name: ")
+#       edit(name4.upper())
+#    elif cmd=="view":
+#       index_no2=-1
+#       for v in contact:
+#          index_no2 += 1
+#          print(f"\nContact name: {v}\nContact number: {numbers[index_no2]}")
+#    elif cmd=="quit":
+#       break
+#    elif cmd=="help":
+#       print(List_of_cmds)
+#    else:
+#       print("\nCommand not found")
